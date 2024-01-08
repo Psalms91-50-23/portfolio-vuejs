@@ -58,7 +58,6 @@
   right: -100%;
   top: -70%;
   transition: all 0.3s ease-in-out;
-  /* outline: none; */
   animation: show-bubble-box 4.5s ease-in-out;
 }
 
