@@ -37,6 +37,8 @@
         </div>
       </div>
     </div>
+    <p class="project-technology-instructions" v-if="project?.furtherInstructions">{{ project?.furtherInstructions }}</p>
+    <p class="project-link">Link to project Below</p>
     <a :href="project?.url" target="_blank" rel="noopener noreferrer" class="project-link-live">
       {{ project?.url }}
     </a>
@@ -47,7 +49,7 @@
       <div v-for="(technology, index) in project?.nameOfTechnologies" :key="index" class="project-technologies">
         <div ref="projectToAnimate" class="project-content" >
           <img :src="`${project?.imageOfTechnologies[index]}`" :alt="technology" class="project-image-size">
-          <span>{{ technology }}</span>
+          <span class="project-technology-name">{{ technology }}</span>
         </div>
       </div>
     </div>
@@ -98,7 +100,7 @@ export default {
 <style scoped>
 .project-details {
   max-width: 900px;
-  padding: 1.5rem 1.5rem 5rem 1.5rem;
+  padding: 1.1rem 1.1rem 5rem 1.1rem;
   border-top-right-radius: 25px;
   border-bottom-left-radius: 25px;
   overflow: auto;
@@ -189,6 +191,7 @@ export default {
   font-weight: 800;
 }
 .project-description-text {
+  padding: 0.5rem;
   font-style: italic;
 }
 
@@ -310,28 +313,45 @@ export default {
 
 .project-challenges-text {
   display: flex;
+  padding: 0.5rem;
   height: auto;
   font-style: italic;
 }
 
+.project-technology-instructions {
+  font-weight: 600;
+  font-size: 0.8rem;
+  padding: 0.5rem 0rem;
+  font-style: italic;
+
+}
+
+.project-link {
+  padding: 0.5rem 0rem;
+  font-weight: 600;
+  font-size: 1.2rem;
+}
 .project-technology-title {
   padding: 1rem 0rem;
-  font-size: larger;
 }
 
 .project-link-live {
-
-    display: flex;
-    font-size: 1.4rem;
-    text-align: center;
-    color: black;
-    font-weight: 900;
-    transition: all 0.3s ease-out;
-    text-decoration: none;
-  }
+  display: flex;
+  font-size: 1.1rem;
+  text-align: center;
+  padding: 0.5rem 0rem;
+  color: black;
+  font-weight: 900;
+  transition: all 0.3s ease-out;
+  text-decoration: none;
+}
 
   .project-link-live:hover {
     color: white;
+  }
+
+  .project-technology-name {
+    font-size: 0.7rem;
   }
 
 @keyframes fadeIn {
@@ -378,7 +398,7 @@ export default {
     padding: 1rem 0.5rem;
   }
   .project-technology-title {
-    font-size: 1.2rem;
+    font-size: 1rem;
   }
 
 @media screen and (max-width:600px) {

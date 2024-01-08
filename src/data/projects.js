@@ -27,7 +27,7 @@ export const projects =  [
       id: 2,
       linkImage: "/images/twitt-er.png",
       title: 'Twitt-er',
-      description: 'My motivation was to make my own version of twitter and design. My Twitt-er project has all the basic CRUD functionality, create post, read posts,  delete posts and has update profile as the normal twitter does not allow you to edit posts. I also implemented it here also.',
+      description: 'My motivation was to make my own version of Twitter and design. My Twitt-er project has all the basic CRUD functionality, create post, read posts,  delete posts and has update profile as the normal twitter does not allow you to edit posts. I also implemented it here also.',
       miniDescription: "",
       url: 'https://twitt-er.vercel.app/',
       nameOfTechnologies: ["NextJS","CSS","Javascript", "Sanity","React", "Context API"],
@@ -44,7 +44,8 @@ export const projects =  [
       nameOfTechnologies: ["NextJS","CSS","Javascript","Stripe","React","Context API"],
       imageOfTechnologies: ["/images/nextjs.svg","/images/css.svg","/images/javascript.svg","/images/stripe-logo.png","/images/react.svg", "/images/context-api.PNG"],
       projectImages: ["/images/jb-hi-kho_home_page.PNG", "/images/jb-hi-kho_product_details_page.PNG", "/images/jb-hi-kho_cart.PNG" ,"/images/jb-hi-kho_stripe_completed_payments.PNG","/images/jb-hi-kho_stripe_payment.PNG"],
-      challenges: "This was when I first started NextJS and Sanity. I Had so many challenges. In Sanity how to retrieve products, creating schema for products and trying to understand when to use Server Side Rendering (SSR) comparing it to Static Site Generation (SSG)."
+      challenges: "This was when I first started NextJS and Sanity. I Had so many challenges. In Sanity how to retrieve products, creating schema for products and trying to understand when to use Server Side Rendering (SSR) comparing it to Static Site Generation (SSG).",
+      furtherInstructions: "You can repeat 42... for all credit card numbers for testing payments. This includes expire dates and CVV number."
     },
     {
       id: 4,
@@ -100,8 +101,8 @@ export const projects =  [
       nameOfTechnologies: ["CSS","Javascript", "React", "Redux", "Google maps API"],
       imageOfTechnologies: ["/images/css.svg","/images/javascript.svg","/images/react.svg","/images/redux-icon.svg", "/images/Google_Maps_Logo.svg"],
       projectImages: ["/images/bfa.PNG", "/images/bff-mobile-map-icons.PNG","/images/bff-mobile.PNG"],
-      challenges: "Learning how to use Google API. I had to create a lot of accounts in order to do this with limited request because I did not realize that everytime I shrinked the webpage to test responsiveness, it was requesting after every time I shrunk and enlarged the webpage..",
-      allow: "Please allow Geolocation for this webpage to work."
+      challenges: "Learning how to use Google API. I had to create a lot of accounts in order to do this with limited request because I did not realize that everytime I shrunk the webpage to test responsiveness, it was requesting after every time I shrunk and enlarged the webpage..",
+      allow: "Please allow Geolocation for this webpage to work.",
     },
     {
       id: 9,
@@ -113,6 +114,7 @@ export const projects =  [
       imageOfTechnologies: ["/images/css.svg","/images/javascript.svg","/images/react.svg","/images/redux-icon.svg","/images/firebase-svg.svg"],
       projectImages: ["/images/amazon-home-page.PNG", "/images/amazon-login.PNG","/images/amazon-cart.PNG","/images/amazon-checkout.PNG","/images/amazon-order-history.PNG"],
       challenges: "Learning FireBase authentication and Firebase NoSQL query language. Learning to use the Firebase google website was hard for me as I was new.",
+      furtherInstructions: "You can repeat 42... for all credit card numbers for testing payments. This includes expire dates and CVV number."
     },
    
   ]
