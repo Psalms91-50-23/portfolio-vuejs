@@ -5,6 +5,6 @@ import vue from '@vitejs/plugin-vue'
 export default defineConfig({
   plugins: [vue()],
   build: {
-    chunkSizeWarningLimit: 10000, // Set your desired limit in kilobytes
+    chunkSizeWarningLimit: 3000, // Set your desired limit in kilobytes
   },
 })

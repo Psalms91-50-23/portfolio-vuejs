@@ -93,6 +93,17 @@
   border-bottom: none;
   border-left: none;
 }
+.bubble-top::after {
+  position: absolute;
+  content: "";
+  width: 40px;
+  height: 40px;
+  background-color: rgba(255, 255, 255, 1);
+  border-top: 1px solid rgba(0, 0, 0, 0.3);
+  right: -30px;
+  top: 10px;
+  border-radius: 50%;
+}
 
 .bubble-top-left {
   position: absolute;
@@ -461,7 +472,7 @@
     flex: 1;
     width: 300px;
     right: -250px;
-    top: -290px;
+    top: -240px;
 
   }
   .thought-text {
@@ -469,9 +480,10 @@
   }
   .bubble-top-right {
     top: -5px;
+    right: -50px;
   }
   .bubble-right {
-    top: 60px;
+    top: 70px;
     right: -35px;
   }
   .bubble-right::before {
@@ -516,13 +528,13 @@
   }
   .thought-text{
     font-size: 1rem;
-    padding: 0.2rem;
+    padding: 0rem 0.5rem;
   }
 
 }
 
 
-@media only screen and (min-width: 1200px) and (min-height: 700px) { 
+@media only screen and (min-width: 1200px) and (min-height: 800px) { 
 
   .thought-bubble-box {
     top: -280px;

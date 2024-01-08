@@ -1,8 +1,6 @@
 <template>
     <a :href="project?.url" target="_blank" rel="noopener noreferrer" class="project-show-case-card-container-link">
-        <div class="project-show-case-card-container">
-          <h1>{{ project?.title }}</h1>
-        </div>
+        <p class="project-show-case-title">{{ project?.title }}</p>
     </a>
 </template>
 
@@ -30,5 +28,18 @@ props: {
     transform: scale(1.2);
     color: rgba(10, 112, 195, 0.837)
 }
+
+.project-show-case-title {
+    font-size: 2rem;
+    font-weight: 700;
+    padding: 1rem;
+}
+
+@media screen and (max-width: 600px) {
+    .project-show-case-title {
+        font-size: 1.5rem;
+    }
+}
+
 
 </style>

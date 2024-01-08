@@ -53,10 +53,12 @@ export default {
   top: 0;
   left: 0;
   width: 100%;
-  height: 100px;
+  height: auto;
+  max-height: 300px;
   max-width: 900px;
   background-color: white;
   z-index: 10;
+  padding: 1rem;
 }
 .projects-contents-container {
   display: flex;

@@ -125,17 +125,14 @@ export default {
   transition: all 0.3s ease-out;
 }
 
+.project-link:active {
+  transform: scale(1.05);
+}
+
 .project-link:hover {
   background-color:  rgba(10, 112, 195, 0.837);
   color: white;
 }
-/* .router-link a {
-  text-decoration: none;
-} */
-/* .my-project-link {
-  color: rgb(30, 26, 26);
-  text-decoration: none;
-} */
 
 .in-view {
   opacity: 1;
@@ -229,6 +226,16 @@ export default {
   opacity: 0;
   transform: translateY(-50px);
   transition: all 0.3s ease-out;
+}
+
+
+@media screen and (max-width: 600px) {
+  .technology-header-title {
+    font-size: 0.7rem;
+  }
+  .project-card-technology-color {
+  font-size: 0.5rem ;
+}
 }
 
 @media screen and (min-width: 900px) {

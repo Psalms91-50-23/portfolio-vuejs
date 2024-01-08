@@ -72,7 +72,7 @@ methods: {
     this.isMobile = window.innerWidth <= 768
   },
   updateText() {
-    const speedFactor = this.hasVisitedBefore ? 0.8 : 0.4; // Adjust this value to control the speed
+    const speedFactor = this.hasVisitedBefore ? 0.8 : 0.5; // Adjust this value to control the speed
     const targetLength = this.introText.length;
     if (this.currentLengthOfIntro < targetLength) {
       this.currentLengthOfIntro += speedFactor;

@@ -24,7 +24,6 @@
     },
     data() {
       return {
-        // projects: [ /* Your project data */ ],
         projectIndex: 0,
         intervalId: null
       }
@@ -50,7 +49,6 @@
     position: relative;
     width: 100%;
     overflow: hidden;
-
   }
   .project-container {
     display: flex;
