@@ -1,6 +1,0 @@
-export { default as javascript } from "./javascript.svg"
-export { default as nextjs } from "./nextjs.svg"
-export { default as vue } from "./vue.svg"
-export { default as css } from "./css.svg"
-export { default as html } from "./html.svg"
-export { default as react } from "./react.svg"

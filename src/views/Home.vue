@@ -6,11 +6,11 @@
           @click="toggleFlip"
         >
           <div class="front">
-            <img class="profile-image" src="../assets/cartoon_me.png" />
+            <img class="profile-image" src="/images/cartoon_me.png" />
             <p class="center">Click to see the real me</p>
           </div>
           <div class="back">
-            <img class="profile-image-back" src="../assets/real_me.png" />
+            <img class="profile-image-back" src="/images/real_me.png" />
             <p class="center">Click to see the cartoon me</p>
           </div>
         </div>
