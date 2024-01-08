@@ -42,6 +42,8 @@
     <a :href="project?.url" target="_blank" rel="noopener noreferrer" class="project-link-live">
       {{ project?.url }}
     </a>
+    <p class="project-test-accounts-title" v-if="project?.testAccounts">Test account</p>
+    <p class="project-test-accounts-details"  v-if="project?.testAccounts">{{ project?.testAccounts }}</p>
     <div class="project-link-container">
     </div>
     <div class="project-technology-title">Technologies used in the project</div>
@@ -326,6 +328,15 @@ export default {
 
 }
 
+.project-test-accounts-title {
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+.project-test-accounts-details {
+  padding: 0.25rem 0rem;
+  font-size: 0.8rem;
+  font-style: italic;
+}
 .project-link {
   padding: 0.5rem 0rem;
   font-weight: 600;

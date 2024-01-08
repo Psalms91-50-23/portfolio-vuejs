@@ -6,7 +6,7 @@ export const projects =  [
       title: 'Portfolio',
       description: 'My motivation for this was to finish up my PortFolio and increase my probability of landing an IT job. I decided to do an electronic cv to go along with my paper cv as my paper cv was not giving me much hope.',
       miniDescription: "",
-      url: 'https://twitt-er.vercel.app/',
+      url: 'https://portfolio-vuejs-pearl.vercel.app',
       nameOfTechnologies: ["VUEJS","CSS","Javascript"],
       imageOfTechnologies: ["/images/vue.svg","/images/css.svg","/images/javascript.svg"],
       challenges: "My motivation was to get an IT job as an opportunity opened up for me to apply and I had no hope doing it the normal paper way as that has failed me many times.",
@@ -34,6 +34,7 @@ export const projects =  [
       imageOfTechnologies: ["/images/nextjs.svg","/images/css.svg","/images/javascript.svg", "/images/sanity-red-on-white.svg","/images/react.svg", "/images/context-api.PNG"],
       challenges: "I had many challenges when trying to learn new Technologies. Technologies such as Sanity, NextJS and Context API. where I could not figure out for ages why I was not getting the latest data using their predefined function to retrieve data. After sometime and trying to talk to the sanity slack channel, reading through documentations and forums, a person from the slack channel told me to wrap the query in a encodeURIComponent but it did not work for me with the function supplied by Sanity and I decided to just use a normal await and fetch along with encodeURIComponent. Surprisingly it worked and it retrieved me the latest data when It is added. I was totally shocked and happy at the same time after taking so long to figure it out.",
       projectImages: ["/images/home_page_twitter.PNG", "/images/user_profile_page.PNG", "/images/other_user_profile_page.PNG"],
+      testAccounts: "username:test@test.com pw:111111"
     },
     {
       id: 3,
