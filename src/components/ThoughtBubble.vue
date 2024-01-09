@@ -58,6 +58,7 @@
   top: -70%;
   transition: all 0.3s ease-in-out;
   animation: show-bubble-box 4.5s ease-in-out;
+  z-index: 10;
 }
 
 .hide {
@@ -344,6 +345,8 @@
   left: 20%;
   box-shadow: -1px 2px 5px 2px rgba(0, 0, 0, 0.3);
   animation: show 1.6s ease-in;
+  z-index: 10;
+  pointer-events: none;
 }
 
 
@@ -358,6 +361,8 @@
   background-color: rgba(255, 255, 255, 1);
   box-shadow: -1px 2px 5px 2px rgba(0, 0, 0, 0.3);
   animation: show-bubble-three 1s ease-in;
+  z-index: 10;
+  pointer-events: none;
 }
 
 .thought-bubble-tail::after {
@@ -371,6 +376,8 @@
   background-color: rgba(255, 255, 255, 1);
   box-shadow: -1px 2px 5px 2px rgba(0, 0, 0, 0.3);
   animation: show-bubble-three 0.6s ease-in;
+  z-index: 10;
+  pointer-events: none;
 }
 
 @keyframes show-bubble-box {

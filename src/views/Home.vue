@@ -128,6 +128,7 @@ computed: {
   box-sizing: border-box;
   z-index: 0;
   margin-bottom: 6rem;
+  
 }
 
 .image-container {
@@ -141,6 +142,7 @@ computed: {
   height: 100%;
   border-radius: 50%;
   margin-bottom: 10px;
+  
 }
 
 .flipper {
@@ -176,7 +178,7 @@ computed: {
 .back {
   position: absolute;
   transform: rotateY(180deg);
-  z-index: 1;
+  z-index: 2;
   top: -2rem;
 }
 
@@ -255,7 +257,7 @@ computed: {
   border-radius: 20% 0 0 90%;
   box-shadow: -2px 2px 2px 1px rgba(0, 0, 0, 0.2); 
   transition: all 0.3s ease-in-out;
-  z-index: 0;
+  z-index: 100;
 }  
 .profile-image {
   width: 100%;
@@ -337,12 +339,14 @@ computed: {
     height: 30px;
     width: 70px;
     left: 17rem;
+    pointer-events: none;
   }
   .tail-shadow {
     bottom: -25px;
     height: 30px;
     width: 60px;
     left: 16.9rem;
+    pointer-events: none;
   }
 }
 
