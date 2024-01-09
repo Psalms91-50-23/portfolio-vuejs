@@ -328,7 +328,7 @@ computed: {
 @media only screen and (min-width: 992px) {
   .profile-content-container {
     justify-content: center;
-    align-items: end;
+    align-items: center;
   }
   .speech-bubble {
     left: -21rem;
@@ -397,6 +397,20 @@ computed: {
  }
 }
 
+@media only screen and (min-width: 1000px) and (min-height: 600px) { 
+
+.speech-bubble {
+    left: -21rem;
+    top: -11rem;
+  }
+  .profile-content-container {
+    align-items: end;
+  }
+  .profile-image-content-container {
+    padding-bottom: 2rem;
+    align-items: center;
+ }
+}
 
  @media only screen and (min-width: 1200px) and (min-height: 700px) { 
 

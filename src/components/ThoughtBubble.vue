@@ -28,7 +28,6 @@
     data() {
       return {
         isLargeScreen: false,
-        // thoughtBubble: aboutMe[0].thoughtBubble,
       }
     },
     methods: {
@@ -78,6 +77,7 @@
   width: 100%;
   height: 100%;
   padding: 1rem;
+  left: -1rem;
   background-color: rgba(255, 255, 255, 1);
 }
 
@@ -151,8 +151,8 @@
   position: absolute;
   width: 70px;
   height: 80px;
-  right: calc(0% - (70px / 2));
-  top: 0px;
+  right: calc(0% - (90px / 2));
+  top: -5px;
   background-color: rgb(19, 18, 18);
   border-radius: 50%;
   background-color: rgba(255, 255, 255, 1);
@@ -176,7 +176,7 @@
 .bubble-top-right::after {
   content: "";
   position: absolute;
-  width: 40px;
+  width: 50px;
   height: 40px;
   left: calc(0% - (40px / 2));
   top: -20px;
@@ -189,7 +189,7 @@
 
 .bubble-right {
   position: absolute;
-  width: 50px;
+  width: 80px;
   height: 60px;
   right: -45px;
   border-radius: 50%;
@@ -226,33 +226,33 @@
 .bubble-bottom::before {
   content: "";
   position: absolute;
-  width: 50px;
-  height: 40px;
-  left: -50px;
-  bottom: 15px;
+  width: 70px;
+  height: 50px;
+  left: -60px;
+  bottom: -10px;
   border-top: none;
   border-right: none;
-  border-bottom: 3px solid rgba(0, 0, 0, 0.3);
   border-left: none;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.1);
   border-radius: 40% 50%;
   background-color: rgba(255, 255, 255, 1);
-  box-shadow: 1px 3px 3px 1px rgba(0, 0, 0, 0.3);
+  box-shadow: -2px 4px 2px 2px rgba(0, 0, 0, 0.3);
 
 }
 .bubble-bottom::after {
   content: "";
   position: absolute;
-  width: 50px;
-  height: 30px;
+  width: 60px;
+  height: 40px;
   right: -50px;
-  bottom: 15px;
+  bottom: 5px;
   border-top: none;
   border-right: none;
-  border-bottom: 3px solid rgba(0, 0, 0, 0.3);
   border-left: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
   border-radius: 45% 50%;
   background-color: rgba(255, 255, 255, 1);
-  box-shadow: 1px 3px 3px 1px rgba(0, 0, 0, 0.3);
+  box-shadow: 1px 6px 3px 1px rgba(0, 0, 0, 0.3);
   z-index: 2;
 }
 
@@ -263,9 +263,10 @@
   right: calc(10% - (90px / 2));
   bottom: calc(15% - (90px / 2));
   border-radius: 50%;
-  border-right:  2px solid rgba(0, 0, 0, 0.3);
+
+  border-right: 1px solid rgba(0, 0, 0, 0.2);
   background-color: rgba(255, 255, 255, 1);
-  box-shadow: -1px 5px 2px 1px rgba(0, 0, 0, 0.3);
+  box-shadow: -1px 5px 2px 1px rgba(0, 0, 0, 0.2);
 }
 
 .bubble-bottom-left {
@@ -273,7 +274,7 @@
   width: 50px;
   height: 40px;
   left: calc(0% - (70px / 2));
-  bottom: -15px;
+  bottom: -20px;
   background-color: rgba(255, 255, 255, 1);
   border-radius: 50%;
   border-top: none;
@@ -295,33 +296,17 @@
   border-radius: 50%;
   border-top: none;
   border-right:  none;
-  border-bottom: 3px solid rgba(0, 0, 0, 0.3);
-  border-left:  3px solid rgba(0, 0, 0, 0.3);
-  box-shadow: -2px 3px 4px 1px rgba(0, 0, 0, 0.3);
+  border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+  border-left: none;;
+  box-shadow: -3px 4px 2px 1px rgba(0, 0, 0, 0.2);
   z-index: 2;
 }
 
-.bubble-bottom-left::after {
-  content: "";
-  position: absolute;
-  width: 40px;
-  height: 40px;
-  left: calc(100% + (50px / 2));
-  top: calc(100% - (70px/2));
-  background-color: rgba(255, 255, 255, 1);
-  border-radius: 50%;
-  border-top: none;
-  border-right:  none;
-  border-bottom: 3px solid rgba(0, 0, 0, 0.3);
-  border-left: none;
-  box-shadow: 0 4px 3px 1px rgba(0, 0, 0, 0.3);
-  z-index: 0;
-}
 
 .bubble-left {
   position: absolute;
   width: 40px;
-  height: 60px;
+  height: 70px;
   left: -30px;
   top: calc(50% - (60px / 2));
   background-color: rgba(255, 255, 255, 1);
@@ -336,8 +321,9 @@
   position: absolute;
   content: "";
   width: 60px;
-  height: 45px;
-  right: 0;
+  height: 65px;
+  right: 5px;
+  top: 50px;
   bottom: calc(-75% + (40px / 2));
   background-color: rgba(255, 255, 255, 1);
   border-radius: 50%;
@@ -347,18 +333,6 @@
   box-shadow: -3px 2px 2px 2px rgba(0, 0, 0, 0.3);
 }
 
-.bubble-left::after {
-  position: absolute;
-  content: "";
-  width: 45px;
-  height: 45px;
-  right: -15%;
-  top: 125%;
-  background-color: rgba(255, 255, 255, 1);
-  border-radius: 50%;
-  box-shadow: -3px 1px 1px 1px rgba(0, 0, 0, 0.3);
-  z-index: 5;
-}
 
 .thought-bubble-tail {
   position: absolute;
@@ -439,9 +413,9 @@
   }
 
   .bubble-bottom::before {
-    width: 40px;
+    width: 60px;
     bottom: 5px;
-    left: -30px;
+    left: -50px;
     z-index: -1;
   }
 
@@ -483,13 +457,13 @@
     right: -50px;
   }
   .bubble-right {
-    top: 70px;
+    top: 75px;
     right: -35px;
   }
   .bubble-right::before {
-    top: 50px;
-    right: 5px;
-    width: 40px;
+    top: -30px;
+    right: -10px;
+    width: 50px;
     height: 50px;
   }
 
@@ -499,7 +473,7 @@
 
   .bubble-left::before {
     top: 40px;
-    height: 50px;
+    height: 60px;
     width: 60px;
     left: -20px;
     border-left: 0px;
@@ -519,7 +493,7 @@
 
 @media only screen and (min-width: 1000px) and (min-height: 600px) { 
   .thought-bubble-box {
-    top: -150px;
+    top: -130px;
     right: -300px;
   }
   .thought-bubble-tail {
