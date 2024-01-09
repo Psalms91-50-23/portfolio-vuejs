@@ -227,7 +227,6 @@ computed: {
   width: 100%;
   max-width: 150%;
   height: auto;
-  /* text-align: center; */
   transition: all 0.3s ease-in-out;
   opacity: 0;
   z-index: 2;
@@ -235,7 +234,6 @@ computed: {
 
 .speech-bubble-tail {
   position: absolute;
-  /* left: 15rem; */
   bottom: -14px;
   width: 30px;
   height: 15px;
@@ -249,7 +247,6 @@ computed: {
 
 .tail-shadow {
   position: absolute;
-  /* left: 15rem; */
   bottom: -15px;
   width: 20px;
   height: 15px;
@@ -408,7 +405,7 @@ computed: {
   }
   .profile-image-content-container {
     padding-bottom: 2rem;
-    align-items: center;
+    align-items: end;
  }
 }
 

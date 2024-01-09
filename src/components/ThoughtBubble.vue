@@ -442,6 +442,7 @@
 
 @media screen and (min-width: 901px) { 
   
+ 
   .thought-bubble-box {
     flex: 1;
     width: 300px;
@@ -493,7 +494,7 @@
 
 @media only screen and (min-width: 1000px) and (min-height: 600px) { 
   .thought-bubble-box {
-    top: -130px;
+    top: -210px;
     right: -300px;
   }
   .thought-bubble-tail {
@@ -504,6 +505,7 @@
     font-size: 1rem;
     padding: 0rem 0.5rem;
   }
+
 
 }
 

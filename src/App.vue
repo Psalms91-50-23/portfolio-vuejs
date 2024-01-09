@@ -106,7 +106,6 @@ export default {
   height: 100%;
   box-sizing: border-box;
   transition: all 0.3s ease-in-out;
-  overflow-y: hidden;
 }
 
 /* Hide scrollbar for IE, Edge, and Firefox */
