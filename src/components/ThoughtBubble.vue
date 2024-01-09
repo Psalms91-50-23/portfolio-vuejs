@@ -58,7 +58,6 @@
   top: -70%;
   transition: all 0.3s ease-in-out;
   animation: show-bubble-box 4.5s ease-in-out;
-  z-index: 10;
 }
 
 .hide {
@@ -345,8 +344,6 @@
   left: 20%;
   box-shadow: -1px 2px 5px 2px rgba(0, 0, 0, 0.3);
   animation: show 1.6s ease-in;
-  z-index: 10;
-  pointer-events: none;
 }
 
 
@@ -361,8 +358,6 @@
   background-color: rgba(255, 255, 255, 1);
   box-shadow: -1px 2px 5px 2px rgba(0, 0, 0, 0.3);
   animation: show-bubble-three 1s ease-in;
-  z-index: 10;
-  pointer-events: none;
 }
 
 .thought-bubble-tail::after {
@@ -376,8 +371,6 @@
   background-color: rgba(255, 255, 255, 1);
   box-shadow: -1px 2px 5px 2px rgba(0, 0, 0, 0.3);
   animation: show-bubble-three 0.6s ease-in;
-  z-index: 10;
-  pointer-events: none;
 }
 
 @keyframes show-bubble-box {
@@ -449,7 +442,6 @@
 
 @media screen and (min-width: 901px) { 
   
- 
   .thought-bubble-box {
     flex: 1;
     width: 300px;
@@ -501,7 +493,7 @@
 
 @media only screen and (min-width: 1000px) and (min-height: 600px) { 
   .thought-bubble-box {
-    top: -210px;
+    /* top: -130px; */
     right: -300px;
   }
   .thought-bubble-tail {
@@ -512,7 +504,6 @@
     font-size: 1rem;
     padding: 0rem 0.5rem;
   }
-
 
 }
 
