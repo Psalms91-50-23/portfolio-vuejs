@@ -42,6 +42,11 @@
     <a :href="project?.url" target="_blank" rel="noopener noreferrer" class="project-link-live">
       {{ project?.url }}
     </a>
+    <p v-if="project?.expoMsg"  class="project-expo-msg">{{ project?.expoMsg }}</p>
+    <a  v-if="project?.expoURL" 
+      :href="project?.expoURL" target="_blank" rel="noopener noreferrer" class="project-expo-link-barcode">
+      {{ project?.expoURL }}
+    </a>
     <p class="project-test-accounts-title" v-if="project?.testAccounts">Test account</p>
     <p class="project-test-accounts-details"  v-if="project?.testAccounts">{{ project?.testAccounts }}</p>
     <div class="project-link-container">
@@ -357,7 +362,25 @@ export default {
   text-decoration: none;
 }
 
+.project-expo-msg {
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+.project-expo-link-barcode {
+  display: flex;
+  font-size: 1rem;
+  text-align: center;
+  padding: 0.5rem 0rem;
+  color: black;
+  font-weight: 900;
+  transition: all 0.3s ease-out;
+  text-decoration: none;
+}
   .project-link-live:hover {
+    color: white;
+  }
+
+  .project-expo-link-barcode:hover {
     color: white;
   }
 

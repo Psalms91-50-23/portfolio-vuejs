@@ -4,7 +4,7 @@ export const projects =  [
       id: 0,
       linkImage: "/images/portfolio-home-page.PNG",
       title: 'Portfolio',
-      description: 'My motivation for this was to finish up my PortFolio and increase my probability of landing an IT job. I decided to do an electronic cv to go along with my paper cv as my paper cv was not giving me much hope.',
+      description: 'My motivation for this was to finish up my PortFolio and increase my probability of landing an IT job. I decided to do an portfolio to go along with my paper cv, as my paper cv was not providing me much hope.',
       miniDescription: "",
       url: 'https://portfolio-vuejs-pearl.vercel.app',
       nameOfTechnologies: ["VUEJS","CSS","Javascript"],
@@ -40,7 +40,7 @@ export const projects =  [
       id: 3,
       linkImage: "/images/jb-hi-kho.png",
       title: 'JB-Hi-Kho',
-      description: 'My motivation was to do a better version of my first attempt of E-commerce and also learn NextJS. E-commerce store has all the functionality of a real store with stripe payments.',
+      description: 'My motivation was to do a better version of my first attempt of E-commerce and also learn NextJS. My e-commerce store has all the functionality of a real store with stripe payments.',
       url: 'https://jb-hi-kho.vercel.app/ ',
       nameOfTechnologies: ["NextJS","CSS","Javascript","Stripe","React","Context API"],
       imageOfTechnologies: ["/images/nextjs.svg","/images/css.svg","/images/javascript.svg","/images/stripe-logo.png","/images/react.svg", "/images/context-api.PNG"],
@@ -68,7 +68,9 @@ export const projects =  [
       nameOfTechnologies: ["CSS","Javascript","React Native"],
       imageOfTechnologies: ["/images/css.svg","/images/javascript.svg","/images/react.svg"],
       projectImages: ["/images/nft-home-page.png", "/images/nft-filter.png", "/images/nft-readmore.png","/images/nft-show-more.png"],
-      challenges: "Trying to get my phone simulation to work but gave up and just used my phone instead thinking once I actually start doing React-Native properly I will focus on getting the phone simulation to work but for now just learn. Syntax was one I had to keep looking out for as to how to do mapping in this and you use a component called FlatList pass in your component as props in renderItems you want to run and passing keyExtractor if you want to give it a unique key like that of normal react key. It was more of a conversion of components and ways React Native did it was the challenge."
+      challenges: "Trying to get my phone simulation to work but gave up and just used my phone instead thinking once I actually start doing React-Native properly I will focus on getting the phone simulation to work but for now just learn. Syntax was one I had to keep looking up for as to how to do mapping in this. To map in this, you use a component called FlatList pass in your component as props in renderItems you want to run and passing keyExtractor if you want to give it a unique key like that of normal react key. It was more of a conversion of components and ways React Native did it, was the challenge.",
+      expoURL: "https://play.google.com/store/apps/details?id=host.exp.exponent&hl=en&gl=US",
+      expoMsg: "Please download the expo app below to see it live on mobile."
     },
     {
       id: 6,
@@ -98,7 +100,7 @@ export const projects =  [
       linkImage: "/images/bfa.PNG",
       title: 'My BestFriend App',
       url: "https://bestfriendapp.netlify.app/",
-      description: 'My motivation was to put my learning I just completed my course to the test as I implemented redux into this project and also I wanted to learn about google maps api.',
+      description: 'My motivation was to put my learning to the test as I just completed my course as I implemented redux into this project and also I wanted to learn about google maps api.',
       nameOfTechnologies: ["CSS","Javascript", "React", "Redux", "Google maps API"],
       imageOfTechnologies: ["/images/css.svg","/images/javascript.svg","/images/react.svg","/images/redux-icon.svg", "/images/Google_Maps_Logo.svg"],
       projectImages: ["/images/bfa.PNG", "/images/bff-mobile-map-icons.PNG","/images/bff-mobile.PNG"],
