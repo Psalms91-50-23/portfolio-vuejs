@@ -9,7 +9,7 @@ export const projects =  [
       url: 'https://portfolio-vuejs-pearl.vercel.app',
       nameOfTechnologies: ["VUEJS","CSS","Javascript"],
       imageOfTechnologies: ["/images/vue.svg","/images/css.svg","/images/javascript.svg"],
-      challenges: "Learning syntax for vuejs was hard, had to look up syntax for everything as I was not familiar with syntax.",
+      challenges: "Learning syntax for vuejs was hard, I had to keep looking up syntax for everything as I was not familiar with syntax.",
       projectImages: ["/images/portfolio-home-page.PNG", "/images/portfolio-projects-page.PNG", "/images/portfolio-projects-details.PNG","/images/portfolio-projects-details-whole.PNG"],
     },
     {
@@ -21,7 +21,7 @@ export const projects =  [
       nameOfTechnologies: ["NextJS","Javascript","Typescript","React","Tailwind CSS"],
       imageOfTechnologies: ["/images/nextjs.svg","/images/javascript.svg","/images/typescript.svg","/images/react.svg","/images/tailwind-css.png"],
       projectImages: ["/images/apportioning.PNG", "/images/apportioning_errors.PNG", "/images/apportioning_calculations_done.PNG"],
-      challenges: "This was me starting out at Typescript. I had so many challenges, even though I have tampered with Java in the past — syntax is usually the problem with most codes as I do not remember or have to keep looking up syntax. Formulating functions to do the calculation was most of the challenge for this. Heaps of console.log seeing what is going on."
+      challenges: "This was me starting out at Typescript. I had so many challenges, even though I have tampered with Java in the past — syntax is usually the problem with most codes as I do not remember or have to keep looking up syntax. Formulating functions to do the calculation was most of the challenge for this. Heaps of console logging to see what is going on."
     },
     {
       id: 2,
@@ -42,8 +42,8 @@ export const projects =  [
       title: 'JB-Hi-Kho',
       description: 'My motivation was to do a better version of my first attempt of E-commerce and also learn NextJS. My e-commerce store has all the functionality of a real store with stripe payments.',
       url: 'https://jb-hi-kho.vercel.app/ ',
-      nameOfTechnologies: ["NextJS","CSS","Javascript","Stripe","React","Context API"],
-      imageOfTechnologies: ["/images/nextjs.svg","/images/css.svg","/images/javascript.svg","/images/stripe-logo.png","/images/react.svg", "/images/context-api.PNG"],
+      nameOfTechnologies: ["NextJS","CSS","Javascript","Stripe","React","Context API", "Sanity"],
+      imageOfTechnologies: ["/images/nextjs.svg","/images/css.svg","/images/javascript.svg","/images/stripe-logo.png","/images/react.svg", "/images/context-api.PNG","/images/sanity-red-on-white.svg"],
       projectImages: ["/images/jb-hi-kho_home_page.PNG", "/images/jb-hi-kho_product_details_page.PNG", "/images/jb-hi-kho_cart.PNG" ,"/images/jb-hi-kho_stripe_completed_payments.PNG","/images/jb-hi-kho_stripe_payment.PNG"],
       challenges: "This was when I first started NextJS and Sanity. I Had so many challenges. In Sanity how to retrieve products, creating schema for products and trying to understand when to use Server Side Rendering (SSR) comparing it to Static Site Generation (SSG).",
       furtherInstructions: "You can repeat 42... for all credit card numbers for testing payments. This includes expire dates and CVV number."
