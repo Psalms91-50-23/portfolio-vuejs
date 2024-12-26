@@ -215,7 +215,7 @@ computed: {
   border-radius: 50%;
 }
 .about-me {
-  font-size: 0.85rem;
+  font-size: 0.1rem;
   margin: 0;
 }
 
