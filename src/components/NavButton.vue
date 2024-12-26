@@ -148,6 +148,7 @@ export default {
   transform: scaleX(0);
   transition: all 0.25s ease-out;
 }
+
 .nav-button.selected .icon-container .svg-inline--fa {
   /* color: rgba(0, 174, 255,0.8);  */
   color: white;
