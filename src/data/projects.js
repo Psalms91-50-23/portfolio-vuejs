@@ -99,7 +99,7 @@ export const projects =  [
       id: 8,
       linkImage: "/images/bfa.PNG",
       title: 'My BestFriend App',
-      url: "https://bestfriendapp.netlify.app/",
+      url: "https://bestfriend-app.netlify.app/",
       description: 'My motivation was to put my learning to the test as I just completed my course as I implemented redux into this project and also I wanted to learn about google maps api.',
       nameOfTechnologies: ["CSS","Javascript", "React", "Redux", "Google maps API"],
       imageOfTechnologies: ["/images/css.svg","/images/javascript.svg","/images/react.svg","/images/redux-icon.svg", "/images/Google_Maps_Logo.svg"],
