@@ -1,6 +1,5 @@
 <template>
   <div class="projects-container" >
-    <!-- <h3>projects</h3> -->
     <div class="project-show-case-container">
       <ProjectShowCase :projects="projects"/>
     </div>
@@ -41,7 +40,8 @@ export default {
 }
 
 .projects-container::-webkit-scrollbar-thumb {
-  background-color: transparent; /* Set the color of the scrollbar thumb to transparent (works in WebKit browsers) */
+  background-color: transparent; 
+  /* Set the color of the scrollbar thumb to transparent (works in WebKit browsers) */
 }
 
 .projects-container::-webkit-scrollbar {

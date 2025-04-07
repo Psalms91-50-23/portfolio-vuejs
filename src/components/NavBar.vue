@@ -3,7 +3,6 @@
   <nav class="navbar-container">  
     <NavButton :icon="faHome" buttonText="Home" url="/" iconSize="1x" />
     <NavButton :icon="faProjectDiagram" buttonText="Projects" url="/projects" iconSize="1x" />
-    <!-- <NavButton :icon="faEnvelope" buttonText="Contact" url="/contact" iconSize="1x" /> -->
   </nav>
 </template>
   
@@ -35,7 +34,6 @@
 
 .navbar-container {
     display: flex;
-    /* position: sticky; */
     box-sizing: border-box;
     gap: 1rem;
     padding: 1rem 0rem;
@@ -51,8 +49,5 @@
     padding: 0.5rem;
   }
 }
-
-
-
 
 </style>

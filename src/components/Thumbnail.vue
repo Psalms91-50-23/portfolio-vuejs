@@ -1,4 +1,3 @@
-<!-- Thumbnail.vue -->
 <template>
     <div class="thumbnail" @mouseover="stopRotation">
       <img :src="image" :alt="title" />
@@ -50,14 +49,11 @@
     position: relative;
     width: 50px;
     height: 50px;
-    /* border-radius: 50%; */
-    /* overflow: hidden; */
     cursor: pointer;
     z-index: 1;
   }
   
   .technologies {
-    /* position: absolute; */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -76,8 +72,6 @@
   }
   
   .tech img {
-    /* width: 24px;
-    height: 24px; */
     margin-right: 5px;
     object-fit: contain;
   }

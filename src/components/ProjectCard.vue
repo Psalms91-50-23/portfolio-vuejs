@@ -37,18 +37,17 @@ export default {
   data() {
     return {
       inView: false
-      // isInView: false
     }
   },
   mounted() {
 
     const outOfViewOptions = {
       rootMargin: '0px',
-      threshold: 0.6 // Change this threshold value to adjust when the element should be considered "in view"
+      threshold: 0.6 
     }
     const inViewOptions = {
       rootMargin: '0px',
-      threshold: 0.1 // Change this threshold value to adjust when the element should be considered "in view"
+      threshold: 0.1 
     }
   const outOfViewObserver = new IntersectionObserver(entries => {
       entries.forEach(entry => {
@@ -70,11 +69,8 @@ export default {
         }
       })
     }, inViewOptions)
-    // Observe the element to animate
-    // outOfViewObserver.observe(this.$refs.elementToAnimate)
     inViewObserver.observe(this.$refs.elementToAnimate);
-    // this.projectName = this.$route.params['project-name'];
-}
+  }
 };
 </script>
 
@@ -93,7 +89,6 @@ export default {
   transition: opacity 0.3s ease-out, transform 0.3s ease-out;
   padding: 1.5rem;
   width: 100%;
-  /* min-width: 210px;  */
   height: 100%;
   margin-bottom: 1.5rem;
 }

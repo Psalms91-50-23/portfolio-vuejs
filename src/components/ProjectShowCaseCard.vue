@@ -11,8 +11,8 @@ props: {
     project: {
         type: Object,
         required: true
+        }
     }
-}
 
 }
 </script>
@@ -40,6 +40,5 @@ props: {
         font-size: 1.5rem;
     }
 }
-
 
 </style>

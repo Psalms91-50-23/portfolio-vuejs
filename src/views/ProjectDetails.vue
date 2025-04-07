@@ -188,7 +188,6 @@ export default {
   border-radius: 0px 25px;
 }
 
-/* Style for Firefox */
 .project-title {
   font-size: 3rem;
   font-weight: bolder;

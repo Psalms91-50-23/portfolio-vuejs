@@ -4,7 +4,6 @@
     :class="{ selected: isSelected, scaled: isScaled }" 
     :href="url"
     >
-    <!-- @click="navigateToUrl" -->
     <div class="icon-container">
       <FontAwesomeIcon v-if="isSelected" :icon="icon" :size="iconSize" beat/>
       <FontAwesomeIcon v-else :icon="icon" :size="iconSize" color="white"/>
@@ -51,14 +50,12 @@ export default {
     }
   },
   mounted() {
-    // Retrieve all NavButton instances in the parent component
     if(this.$parent && this.$parent.$children){
       this.buttons = this.$parent.$children.filter(child => child.$options.name === 'NavButton');
       }
   },
   methods: {
     navigateToUrl() {
-      // Loop through all NavButton instances in the parent component and update their active status
         for (const button of this.buttons) {
           button.isSelected = button === this;
         }
@@ -84,7 +81,6 @@ export default {
   position: relative;
   transition: all 0.1s ease-in-out;
   text-decoration: none;
-  /* background-color: rgba(112, 205, 20,0.5); */
 }
 
 .nav-button:hover .underline {
@@ -92,17 +88,6 @@ export default {
   animation-timing-function: linear;
 }
 
-/* @keyframes squiggly {
-  0% {
-    transform: translateX(0);
-  }
-  50% {
-    transform: translateX(50%);
-  }
-  100% {
-    transform: translateX(0);
-  }
-} */
 .icon-container {
   display: flex;
   align-items: center;
@@ -121,22 +106,12 @@ export default {
   color: inherit;
   
 }
-/* .icon-container .fa-icon {
-  font-size: 0.5em;
-} */
 
-/* .fa-icon {
-  font-size: 0.5em;
-} */
 
 .nav-button.active {
-  /* background-color: rgba(112, 205, 20,1); */
   transform: scale(1.1);
 }
 
-/* .nav-button.selected {
-  transform: scale(1.1);
-} */
 
 .underline {
   position: absolute;
@@ -150,7 +125,6 @@ export default {
 }
 
 .nav-button.selected .icon-container .svg-inline--fa {
-  /* color: rgba(0, 174, 255,0.8);  */
   color: white;
 }
 .nav-button:hover .underline,

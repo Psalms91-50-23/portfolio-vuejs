@@ -41,7 +41,7 @@
     },
     beforeUnmount() {
     window.removeEventListener('resize', this.largeScreen)
-    // cancelAnimationFrame(this.updateText)
+
   },
   }
   </script>
@@ -66,7 +66,7 @@
 
 .thought-text {
   width: 100%;
-  font-size: 1rem;
+  font-size: 0.8rem !important;
   padding: 0.8rem;
 }
 
@@ -274,7 +274,7 @@
   width: 50px;
   height: 40px;
   left: calc(0% - (70px / 2));
-  bottom: -20px;
+  bottom: -10px;
   background-color: rgba(255, 255, 255, 1);
   border-radius: 50%;
   border-top: none;
@@ -505,6 +505,9 @@
     padding: 0rem 0.5rem;
   }
 
+  .bubble-bottom-left {
+    bottom: -20px;
+  }
 }
 
 

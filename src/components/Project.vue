@@ -48,7 +48,6 @@ export default {
 </script>
 
 <style scoped>
-  /* flex: 0 0 auto; */
-/*  */
+
 </style>
 

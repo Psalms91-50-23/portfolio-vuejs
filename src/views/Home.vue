@@ -72,12 +72,12 @@ methods: {
     this.isMobile = window.innerWidth <= 768
   },
   updateText() {
-    const speedFactor = this.hasVisitedBefore ? 0.8 : 0.5; // Adjust this value to control the speed
+    const speedFactor = this.hasVisitedBefore ? 0.8 : 0.5; 
     const targetLength = this.introText.length;
     if (this.currentLengthOfIntro < targetLength) {
       this.currentLengthOfIntro += speedFactor;
     if (this.currentLengthOfIntro > targetLength) {
-      this.currentLengthOfIntro = targetLength; // Clamp to the target length
+      this.currentLengthOfIntro = targetLength; 
     }
       window.requestAnimationFrame(this.updateText);
     }
@@ -271,7 +271,7 @@ computed: {
 @media only screen and (min-width: 576px) and (min-height: 700px){
 
   .about-me {
-    font-size: 0.85rem;
+    font-size: 0.85rem !important;
   }
 
   .speech-bubble-tail {
@@ -298,7 +298,6 @@ computed: {
     font-size: 0.85rem;
   }
 }
-
 
 /* Media query for medium devices (tablets) */
 @media only screen and (min-width: 768px) {
@@ -350,8 +349,7 @@ computed: {
   }
 }
 
-
- @media only screen and (max-width: 300px) and (max-height: 700px) {
+ @media only screen and (max-width: 400px) {
   
     .speech-bubble {
       left: 0.1rem;
@@ -363,6 +361,17 @@ computed: {
       bottom: -3.5rem;
     }
     .about-me {
+    font-size: 0.75rem;
+    margin: 0;
+  }
+ }
+
+ @media only screen and (max-width: 550px) {
+  .speech-bubble {
+      height: auto;
+      width: 220px;
+    }
+  .about-me {
     font-size: 0.75rem;
     margin: 0;
   }
