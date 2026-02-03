@@ -47,7 +47,7 @@ export default {
 
 <style scoped>
 
-.profile-container {
+/* .profile-container {
   display: flex;
   box-sizing: border-box;
   position: relative;
@@ -57,7 +57,20 @@ export default {
   padding: 1rem;
   box-sizing: border-box;
 
+} */
+.profile-container {
+  position: relative;
+  width: 100%;
+  min-height: 100vh; /* ensures it fills the viewport */
+  min-width: 90vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden; /* hide overflow to prevent scrollbars */
+  box-sizing: border-box;
+  padding: 0; /* optional, you can add 1rem if needed */
 }
+
 
 .background-video {
   position: relative;
@@ -70,7 +83,7 @@ export default {
 }
 
 .video {
-  position: absolute;
+  position: fixed;
   top: 50%;
   left: 50%;
   min-width: 100%;
@@ -104,6 +117,7 @@ export default {
   justify-content: center;
   width: 100%;
   height: 100%;
+  min-height: 100vh; 
   box-sizing: border-box;
   transition: all 0.3s ease-in-out;
 }
@@ -179,10 +193,8 @@ export default {
   
 }
 
-
 @media screen and (max-width: 449px){
   .contents.project-details {
-    /* margin-bottom: 0px; */
     padding-top: 20rem;
   }
   

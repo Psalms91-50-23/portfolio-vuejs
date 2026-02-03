@@ -1,110 +1,129 @@
 <template>
   <div class="project-details">
     <div class="padding-container">
-    <div class="back-button-parent">
-      <div class="back-icon-container" @click="goBack">
-        <font-awesome-icon 
-        icon="fa-solid fa-left-long" 
-          :style="{ color: 'white', fontSize: '3rem' }"
-        />
-      <div class="underline-back"></div>
-    </div>
-    </div>
-    <div class="top-left-corner"></div>
-    <div class="bottom-right-corner"></div>
-    <div class="">
-      <p class="project-title">{{ project?.title }}</p>
-    </div>
-    <div class="project-body">
-      <div class="project-description-container">
-        <p v-if="project?.allow" class="project-allow-text">{{ project?.allow }}</p>
-        <p class="project-reason-text">Reasons for the project:</p>
-        <p class="project-description-text">{{ project?.description }}</p>
+      <div class="back-button-parent">
+        <div class="back-icon-container" @click="goBack">
+          <font-awesome-icon
+            icon="fa-solid fa-left-long"
+            :style="{ color: 'white', fontSize: '3rem' }"
+          />
+          <div class="underline-back"></div>
+        </div>
       </div>
-      <div class="project-challenges-container">
-        <p class="project-challenge-title">Some challengers I encountered:</p>
-        <p class="project-challenges-text">
-          {{ project?.challenges }}
-        </p>
+
+      <div>
+        <p class="project-title">{{ project?.title }}</p>
       </div>
-      <div v-if="project?.projectImages" class="project-images-container" >
-        <div v-for="(image, index) in project?.projectImages" :key="index" class="project-images" ref="projectToAnimate" >
-          <img 
-            :src="`${image}`" 
-            alt="project images" 
-            class="project-sample-images"
-            >
+
+      <div class="project-body">
+        <div class="project-description-container">
+          <p v-if="project?.allow" class="project-allow-text">{{ project?.allow }}</p>
+          <p class="project-reason-text">Reasons for the project:</p>
+          <p class="project-description-text">{{ project?.description }}</p>
+        </div>
+
+        <div class="project-challenges-container">
+          <p class="project-challenge-title">Some challenges I encountered:</p>
+          <p class="project-challenges-text">{{ project?.challenges }}</p>
+        </div>
+
+        <div v-if="project?.projectImages" class="project-images-container">
+          <div
+            v-for="(image, index) in project?.projectImages"
+            :key="index"
+            class="project-images"
+          >
+            <img
+              :src="image"
+              alt="project image"
+              class="project-sample-images"
+              @click="openModal(image)"
+            />
+          </div>
+        </div>
+      </div>
+
+      <div class="project-technology-title">Technologies used in the project</div>
+      <div class="project-technology-container">
+        <div
+          v-for="(technology, index) in project?.nameOfTechnologies"
+          :key="index"
+          class="project-technologies"
+        >
+          <div class="project-content">
+            <img
+              :src="project?.imageOfTechnologies[index]"
+              :alt="technology"
+              class="project-image-size"
+            />
+            <span class="project-technology-name">{{ technology }}</span>
+          </div>
         </div>
       </div>
     </div>
-    <p class="project-technology-instructions" v-if="project?.furtherInstructions">{{ project?.furtherInstructions }}</p>
-    <p class="project-link">Link to project Below</p>
-    <a :href="project?.url" target="_blank" rel="noopener noreferrer" class="project-link-live">
-      {{ project?.url }}
-    </a>
-    <p v-if="project?.expoMsg"  class="project-expo-msg">{{ project?.expoMsg }}</p>
-    <a  v-if="project?.expoURL" 
-      :href="project?.expoURL" target="_blank" rel="noopener noreferrer" class="project-expo-link-barcode">
-      {{ project?.expoURL }}
-    </a>
-    <p class="project-test-accounts-title" v-if="project?.testAccounts">Test account</p>
-    <p class="project-test-accounts-details"  v-if="project?.testAccounts">{{ project?.testAccounts }}</p>
-    <div class="project-link-container">
-    </div>
-    <div class="project-technology-title">Technologies used in the project</div>
-    <div class="project-technology-container">
-      <div v-for="(technology, index) in project?.nameOfTechnologies" :key="index" class="project-technologies">
-        <div ref="projectToAnimate" class="project-content" >
-          <img :src="`${project?.imageOfTechnologies[index]}`" :alt="technology" class="project-image-size">
-          <span class="project-technology-name">{{ technology }}</span>
-        </div>
+
+    <div v-if="isModalOpen" class="modal-overlay" @click.self="closeModal">
+      <div class="modal-content">
+        <button class="modal-close" @click="closeModal">✕</button>
+        <img :src="modalImage" alt="Enlarged Project Image" />
       </div>
     </div>
-  </div>
   </div>
 </template>
 
 <script>
-import { ref, onMounted } from 'vue';
-import { useRouter, useRoute } from 'vue-router';
-import { projects } from '../data';
+import { ref, onMounted } from "vue";
+import { useRouter, useRoute } from "vue-router";
+import { projects } from "../data";
 
 export default {
   name: "ProjectDetails",
   setup() {
     const route = useRoute();
     const router = useRouter();
-    let project = ref(null);
+
+    const project = ref(null);
+    const isModalOpen = ref(false);
+    const modalImage = ref("");
+
     onMounted(() => {
-      const name = route.params['project'];
-      const foundProject  = projects.find(p => p.title == name);
-      // Redirect to Home if the project is not found
+      const name = route.params["project"];
+      const foundProject = projects.find((p) => p.title === name);
       if (!foundProject) {
-        router.push({ name: 'Home' });
-      }else {
+        router.push({ name: "Home" });
+      } else {
         project.value = foundProject;
       }
-
     });
+
     function goBack() {
-      // Use router to navigate back
       router.go(-1);
     }
 
-    function backHome(){
-      router.push("/");
+    function openModal(image) {
+      modalImage.value = image;
+      isModalOpen.value = true;
     }
-    return { 
+
+    function closeModal() {
+      isModalOpen.value = false;
+      modalImage.value = "";
+    }
+
+    return {
       project,
-      backHome,
-      imageInView: false,
-      goBack
+      goBack,
+      isModalOpen,
+      modalImage,
+      openModal,
+      closeModal,
     };
   },
 };
 </script>
 
 <style scoped>
+
 .project-details {
   max-width: 900px;
   padding: 1.1rem 1.1rem 5rem 1.1rem;
@@ -117,11 +136,9 @@ export default {
 }
 
 .project-details::-webkit-scrollbar-thumb {
-  /* Set the color of the scrollbar thumb to transparent (works in WebKit browsers) */
-  background-color: transparent; 
+  background-color: transparent;
 }
 
-/* Hide scrollbar for IE, Edge, and Firefox */
 .project-details::-webkit-scrollbar {
   display: none;
 }
@@ -130,6 +147,7 @@ export default {
   font-weight: 900;
   font-style: italic;
 }
+
 .back-button-parent {
   display: flex;
   position: sticky;
@@ -147,18 +165,13 @@ export default {
   transition: all 0.3 ease-out;
   cursor: pointer;
   width: 3rem;
-
 }
 .back-icon-container:hover {
   transform: scale(1.3);
 }
-
 .back-icon-container:hover .underline-back {
-
-  animation: squiggly 1s infinite;
-  animation-timing-function: linear;
+  animation: squiggly 1s infinite linear;
 }
-
 .underline-back {
   position: absolute;
   bottom: 0;
@@ -168,9 +181,6 @@ export default {
   background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
   transform: scaleX(0);
   transition: all 0.25s ease-out;
-}
-.back-icon-container.selected .icon-container .svg-inline--fa {
-  color: white;
 }
 .back-icon-container:hover .underline-back,
 .back-icon-container.active .underline-back,
@@ -196,19 +206,18 @@ export default {
 .project-reason-text {
   font-weight: 800;
 }
+
 .project-description-text {
   padding: 0.5rem;
   font-style: italic;
 }
 
-.top-left-corner {
+.top-left-corner,
+.bottom-right-corner {
   position: absolute;
-  width: 0.1rem;
-  height: 0.1rem;
-  left: 0;
-  top: 0;
 }
 
+.top-left-corner { left: 0; top: 0; width: 0.1rem; height: 0.1rem; }
 .top-left-corner:before {
   content: "";
   position: absolute;
@@ -227,18 +236,10 @@ export default {
   background-color:white;
   left: 0rem;
   top: -0.5rem;
-  animation: fromLeftJam  1.5s ease-in-out;
+  animation: fromLeftJam 1.5s ease-in-out;
 }
 
-.bottom-right-corner {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  width: 0.1rem;
-  height: 0.1rem;
-  background-color: white;
-}
-
+.bottom-right-corner { bottom: 0; right: 0; width: 0.1rem; height: 0.1rem; background-color: white; }
 .bottom-right-corner:before {
   content: "";
   position: absolute;
@@ -247,8 +248,6 @@ export default {
   width: 1rem;
   height: 9rem;
   background-color:white;
-  transition: 0.3 all 0.3 ease-in-out;
-
 }
 
 .bottom-right-corner:after {
@@ -259,8 +258,6 @@ export default {
   width: 17rem;
   height: 1rem;
   background-color:white;
-  transition: 0.3 all 0.3 ease-in-out;
-
 }
 
 .project-technology-container {
@@ -284,7 +281,7 @@ export default {
   gap: 2rem;
 }
 
-.project-images  {
+.project-images {
   position: relative;
   width: 100%;
   height: auto;  
@@ -302,7 +299,6 @@ export default {
 .project-image-size {
   width: 5rem;
   height: 3rem;
- 
 } 
 
 .project-challenges-container {
@@ -329,7 +325,6 @@ export default {
   font-size: 0.8rem;
   padding: 0.5rem 0rem;
   font-style: italic;
-
 }
 
 .project-test-accounts-title {
@@ -341,16 +336,15 @@ export default {
   font-size: 0.8rem;
   font-style: italic;
 }
+
 .project-link {
   padding: 0.5rem 0rem;
   font-weight: 600;
   font-size: 1.2rem;
 }
-.project-technology-title {
-  padding: 1rem 0rem;
-}
 
-.project-link-live {
+.project-link-live,
+.project-expo-link-barcode {
   display: flex;
   font-size: 1.1rem;
   text-align: center;
@@ -361,45 +355,21 @@ export default {
   text-decoration: none;
 }
 
+.project-link-live:hover,
+.project-expo-link-barcode:hover {
+  color: white;
+}
+
 .project-expo-msg {
   font-size: 0.9rem;
   font-weight: 600;
 }
-.project-expo-link-barcode {
-  display: flex;
-  font-size: 1rem;
-  text-align: center;
-  padding: 0.5rem 0rem;
-  color: black;
-  font-weight: 900;
-  transition: all 0.3s ease-out;
-  text-decoration: none;
-}
-  .project-link-live:hover {
-    color: white;
-  }
 
-  .project-expo-link-barcode:hover {
-    color: white;
-  }
-
-  .project-technology-name {
-    font-size: 0.7rem;
-  }
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateX(300px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
+.project-technology-name {
+  font-size: 0.7rem;
 }
 
 @media (max-width: 480px) {
-
   .padding-container {
     padding: 3rem 1rem;
   }
@@ -411,13 +381,12 @@ export default {
 
   .top-left-corner:after {
     width: 12rem;
-    height:1rem;
+    height: 1rem;
   }
   .bottom-right-corner:before {
     width: 1rem;
     height: 9rem;
   }
-
   .bottom-right-corner:after {
     width: 12rem;
     height: 1rem;
@@ -430,18 +399,83 @@ export default {
   .project-sample-images {
     padding: 1rem 0.5rem;
   }
+
   .project-technology-title {
     font-size: 1rem;
   }
 
-@media screen and (max-width:600px) {
   .project-link-live {
     font-size: 1rem;
   }
+
   .project-title {
     font-size: 2rem;
   }
 }
 
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 1rem;
+}
+
+.modal-content {
+  position: relative;
+  max-width: 90%;
+  max-height: 90%;
+}
+
+.modal-content img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  display: block;
+}
+
+.modal-close {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background: white;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  line-height: 1; 
+  margin:0;
+  padding: 0;     
+  z-index: 10;
+
+  transition: transform 0.2s ease-in-out; 
+}
+
+.modal-close:hover {
+  background: #eee;
+  transform: scale(1.5); 
+}
+
+.project-sample-images {
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+}
+
+.project-sample-images:hover {
+  transform: scale(1.05);
 }
 </style>
