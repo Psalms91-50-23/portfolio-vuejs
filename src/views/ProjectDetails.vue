@@ -1,6 +1,7 @@
 <template>
   <div class="project-details">
     <div class="padding-container">
+      <!-- BACK BUTTON -->
       <div class="back-button-parent">
         <div class="back-icon-container" @click="goBack">
           <font-awesome-icon
@@ -11,25 +12,61 @@
         </div>
       </div>
 
-      <div>
-        <p class="project-title">{{ project?.title }}</p>
-      </div>
+      <!-- TITLE -->
+      <p class="project-title">{{ project?.title }}</p>
 
+      <!-- BODY -->
       <div class="project-body">
         <div class="project-description-container">
-          <p v-if="project?.allow" class="project-allow-text">{{ project?.allow }}</p>
-          <p class="project-reason-text">Reasons for the project:</p>
+          <p v-if="project?.allow" class="project-allow-text">
+            {{ project.allow }}
+          </p>
+
+          <p v-if="project?.miniDescription" class="project-mini-description">
+            {{ project.miniDescription }}
+          </p>
+
+          <p class="project-reason-text">Project Overview:</p>
           <p class="project-description-text">{{ project?.description }}</p>
         </div>
 
-        <div class="project-challenges-container">
-          <p class="project-challenge-title">Some challenges I encountered:</p>
-          <p class="project-challenges-text">{{ project?.challenges }}</p>
+        <div v-if="project?.challenges" class="project-challenges-container">
+          <p class="project-challenge-title">Challenges:</p>
+          <p class="project-challenges-text">{{ project.challenges }}</p>
         </div>
 
-        <div v-if="project?.projectImages" class="project-images-container">
+        <!-- CONDITIONAL EXTRA DETAILS -->
+        <div
+          v-if="
+            project?.testAccounts ||
+            project?.furtherInstructions ||
+            project?.expoMsg ||
+            project?.expoURL
+          "
+          class="project-extra-details-container"
+        >
+
+          <div v-if="project?.expoMsg" class="project-extra-detail-box">
+            <p class="project-extra-detail-label">Expo Instructions:</p>
+            <p class="project-extra-detail-text">{{ project.expoMsg }}</p>
+          </div>
+
+          <div v-if="project?.expoURL" class="project-extra-detail-box">
+            <p class="project-extra-detail-label">Expo App:</p>
+            <a
+              :href="project.expoURL"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="project-link-live"
+            >
+              {{ project.expoURL }}
+            </a>
+          </div>
+        </div>
+
+        <div v-if="project?.projectImages?.length" class="project-images-container">
           <div
-            v-for="(image, index) in project?.projectImages"
+            v-for="(image, index) in project.projectImages"
             :key="index"
             class="project-images"
           >
@@ -42,26 +79,138 @@
           </div>
         </div>
       </div>
+      <div
+        v-if="project?.testAccounts?.trim() || project?.furtherInstructions?.trim()"
+        class="project-extra-details-container"
+      >
+        <p class="project-extra-details-title">
+          Additional Project Details
+        </p>
 
-      <div class="project-technology-title">Technologies used in the project</div>
+        <div v-if="project?.testAccounts?.trim()" class="project-extra-detail-box">
+          <p class="project-extra-detail-label">Test Account</p>
+          <p class="project-extra-detail-text">
+            {{ project.testAccounts }}
+          </p>
+        </div>
+
+        <div v-if="project?.furtherInstructions?.trim()" class="project-extra-detail-box">
+          <p class="project-extra-detail-label">Testing Instructions</p>
+          <p class="project-extra-detail-text">
+            {{ project.furtherInstructions }}
+          </p>
+        </div>
+      </div>
+      <!-- TECHNOLOGIES -->
+      <div class="project-technology-title">
+        Technologies used in the project
+      </div>
+
+      <!-- FRONTEND -->
+      <template v-if="project?.frontendTechnologies?.length">
+        <div class="project-technology-subtitle">Frontend</div>
+
+        <div class="project-technology-container">
+          <div
+            v-for="(tech, index) in project.frontendTechnologies"
+            :key="'front-' + index"
+            class="project-technologies"
+          >
+            <div class="project-content">
+              <img
+                v-if="project?.imageOfFrontendTechnologies?.[index]"
+                :src="project.imageOfFrontendTechnologies[index]"
+                :alt="tech"
+                class="project-image-size"
+              />
+              <span class="project-technology-name">{{ tech }}</span>
+            </div>
+          </div>
+        </div>
+      </template>
+
+      <!-- DEFAULT / OLD TECHNOLOGIES -->
+      <template v-else-if="project?.nameOfTechnologies?.length">
+        <div class="project-technology-container">
+          <div
+            v-for="(tech, index) in project.nameOfTechnologies"
+            :key="'tech-' + index"
+            class="project-technologies"
+          >
+            <div class="project-content">
+              <img
+                v-if="project?.imageOfTechnologies?.[index]"
+                :src="project.imageOfTechnologies[index]"
+                :alt="tech"
+                class="project-image-size"
+              />
+              <span class="project-technology-name">{{ tech }}</span>
+            </div>
+          </div>
+        </div>
+      </template>
+
+      <!-- BACKEND -->
+      <template v-if="project?.backendTechnologies?.length">
+        <div class="project-technology-subtitle">Backend</div>
+
+        <div class="project-technology-container">
+          <div
+            v-for="(tech, index) in project.backendTechnologies"
+            :key="'back-' + index"
+            class="project-technologies"
+          >
+            <div class="project-content">
+              <img
+                v-if="project?.imageOfBackendTechnologies?.[index]"
+                :src="project.imageOfBackendTechnologies[index]"
+                :alt="tech"
+                class="project-image-size"
+              />
+              <span class="project-technology-name">{{ tech }}</span>
+            </div>
+          </div>
+        </div>
+      </template>
+      <!-- INTEGRATIONS -->
+    <template v-if="project?.integrations?.length">
+      <div class="project-technology-subtitle">Integrations</div>
+
       <div class="project-technology-container">
         <div
-          v-for="(technology, index) in project?.nameOfTechnologies"
-          :key="index"
+          v-for="(integration, index) in project.integrations"
+          :key="'integration-' + index"
           class="project-technologies"
         >
           <div class="project-content">
+            <!-- Optional icon support later -->
+            <span class="project-technology-name">
+              {{ integration }}
+            </span>
             <img
-              :src="project?.imageOfTechnologies[index]"
-              :alt="technology"
+              v-if="project?.integrationImages?.[index]"
+              :src="project.integrationImages[index]"
               class="project-image-size"
             />
-            <span class="project-technology-name">{{ technology }}</span>
           </div>
         </div>
       </div>
+    </template>
+      <!-- LIVE LINK AT BOTTOM -->
+      <div v-if="project?.url" class="project-bottom-link-container">
+        <p class="project-bottom-link-title">Live Project:</p>
+        <a
+          :href="project.url"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="project-link-live"
+        >
+          {{ project.url }}
+        </a>
+      </div>
     </div>
 
+    <!-- MODAL -->
     <div v-if="isModalOpen" class="modal-overlay" @click.self="closeModal">
       <div class="modal-content">
         <button class="modal-close" @click="closeModal">✕</button>
@@ -89,6 +238,7 @@ export default {
     onMounted(() => {
       const name = route.params["project"];
       const foundProject = projects.find((p) => p.title === name);
+
       if (!foundProject) {
         router.push({ name: "Home" });
       } else {
@@ -96,19 +246,17 @@ export default {
       }
     });
 
-    function goBack() {
-      router.go(-1);
-    }
+    const goBack = () => router.go(-1);
 
-    function openModal(image) {
+    const openModal = (image) => {
       modalImage.value = image;
       isModalOpen.value = true;
-    }
+    };
 
-    function closeModal() {
+    const closeModal = () => {
       isModalOpen.value = false;
       modalImage.value = "";
-    }
+    };
 
     return {
       project,
@@ -123,7 +271,6 @@ export default {
 </script>
 
 <style scoped>
-
 .project-details {
   max-width: 900px;
   padding: 1.1rem 1.1rem 5rem 1.1rem;
@@ -132,7 +279,7 @@ export default {
   overflow: auto;
   margin-bottom: 3rem;
   -ms-overflow-style: none;
-  overflow: -moz-scrollbars-none; /* Firefox */
+  overflow: -moz-scrollbars-none;
 }
 
 .project-details::-webkit-scrollbar-thumb {
@@ -146,6 +293,13 @@ export default {
 .project-allow-text {
   font-weight: 900;
   font-style: italic;
+}
+
+.project-mini-description {
+  font-size: 0.95rem;
+  font-weight: 800;
+  font-style: italic;
+  padding: 0.4rem 0;
 }
 
 .back-button-parent {
@@ -162,16 +316,19 @@ export default {
   display: flex;
   justify-content: end;
   position: sticky;
-  transition: all 0.3 ease-out;
+  transition: all 0.3s ease-out;
   cursor: pointer;
   width: 3rem;
 }
+
 .back-icon-container:hover {
   transform: scale(1.3);
 }
+
 .back-icon-container:hover .underline-back {
   animation: squiggly 1s infinite linear;
 }
+
 .underline-back {
   position: absolute;
   bottom: 0;
@@ -182,11 +339,9 @@ export default {
   transform: scaleX(0);
   transition: all 0.25s ease-out;
 }
-.back-icon-container:hover .underline-back,
-.back-icon-container.active .underline-back,
-.back-icon-container.selected .underline-back {
+
+.back-icon-container:hover .underline-back {
   transform: scaleX(1);
-  transition: all 0.25s ease-out;
   transform-origin: left;
 }
 
@@ -212,68 +367,6 @@ export default {
   font-style: italic;
 }
 
-.top-left-corner,
-.bottom-right-corner {
-  position: absolute;
-}
-
-.top-left-corner { left: 0; top: 0; width: 0.1rem; height: 0.1rem; }
-.top-left-corner:before {
-  content: "";
-  position: absolute;
-  width: 1rem;
-  height: 8rem;
-  background-color: white;
-  left: -0.5rem;
-  top: -0.5rem;
-  animation: 0.3s fromLeft 0s ease;
-}
-.top-left-corner:after {
-  content: "";
-  position: absolute;
-  width: 17rem;
-  height:1rem;
-  background-color:white;
-  left: 0rem;
-  top: -0.5rem;
-  animation: fromLeftJam 1.5s ease-in-out;
-}
-
-.bottom-right-corner { bottom: 0; right: 0; width: 0.1rem; height: 0.1rem; background-color: white; }
-.bottom-right-corner:before {
-  content: "";
-  position: absolute;
-  bottom: -0.5rem;
-  right: -0.5rem;
-  width: 1rem;
-  height: 9rem;
-  background-color:white;
-}
-
-.bottom-right-corner:after {
-  content: "";
-  position: absolute;
-  bottom: -0.5rem;
-  right: 0rem;
-  width: 17rem;
-  height: 1rem;
-  background-color:white;
-}
-
-.project-technology-container {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: columns;
-}
-
-.project-content {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 0.3rem;
-}
-
 .project-images-container {
   display: flex;
   flex-wrap: wrap;
@@ -282,31 +375,25 @@ export default {
 }
 
 .project-images {
-  position: relative;
   width: 100%;
-  height: auto;  
   max-width: 400px;
   padding: 10px;
 }
 
 .project-sample-images {
-  position: relative;
   width: 100%;
-  padding: 1rem 0rem;
-  box-sizing: border-box;
+  padding: 1rem 0;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
 }
 
-.project-image-size {
-  width: 5rem;
-  height: 3rem;
-} 
+.project-sample-images:hover {
+  transform: scale(1.05);
+}
 
 .project-challenges-container {
   display: flex;
-  position: relative;
-  box-sizing: border-box;
   flex-direction: column;
-  overflow: auto;
 }
 
 .project-challenge-title {
@@ -314,111 +401,113 @@ export default {
 }
 
 .project-challenges-text {
-  display: flex;
   padding: 0.5rem;
-  height: auto;
   font-style: italic;
 }
 
-.project-technology-instructions {
-  font-weight: 600;
-  font-size: 0.8rem;
-  padding: 0.5rem 0rem;
-  font-style: italic;
+/* EXTRA DETAILS */
+.project-extra-details-container {
+  margin: 1rem 0;
+  padding: 0.9rem;
+  border-radius: 12px;
+  background-color: rgba(255, 255, 255, 0.25);
 }
 
-.project-test-accounts-title {
-  font-size: 0.9rem;
-  font-weight: 600;
-}
-.project-test-accounts-details {
-  padding: 0.25rem 0rem;
-  font-size: 0.8rem;
-  font-style: italic;
-}
-
-.project-link {
-  padding: 0.5rem 0rem;
-  font-weight: 600;
-  font-size: 1.2rem;
-}
-
-.project-link-live,
-.project-expo-link-barcode {
-  display: flex;
-  font-size: 1.1rem;
-  text-align: center;
-  padding: 0.5rem 0rem;
-  color: black;
+.project-extra-details-title {
+  margin: 0 0 0.7rem 0;
   font-weight: 900;
-  transition: all 0.3s ease-out;
-  text-decoration: none;
+  font-size: 1rem;
 }
 
-.project-link-live:hover,
-.project-expo-link-barcode:hover {
-  color: white;
+.project-extra-detail-box {
+  margin-bottom: 0.8rem;
 }
 
-.project-expo-msg {
-  font-size: 0.9rem;
-  font-weight: 600;
+.project-extra-detail-box:last-child {
+  margin-bottom: 0;
+}
+
+.project-extra-detail-label {
+  margin: 0;
+  font-size: 0.85rem;
+  font-weight: 800;
+}
+
+.project-extra-detail-text {
+  margin: 0.25rem 0 0 0;
+  font-size: 0.8rem;
+  font-style: italic;
+}
+
+/* TECHNOLOGY SECTION */
+.project-technology-title {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-top: 1.2rem;
+}
+
+.project-technology-subtitle {
+  font-size: 0.85rem;
+  font-weight: 700;
+  margin-top: 0.6rem;
+  margin-bottom: 0.3rem;
+}
+
+.project-technology-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.project-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.2rem;
+}
+
+.project-image-size {
+  width: 3.5rem;
+  height: 2.5rem;
+  object-fit: contain;
 }
 
 .project-technology-name {
-  font-size: 0.7rem;
+  font-size: 0.6rem;
 }
 
-@media (max-width: 480px) {
-  .padding-container {
-    padding: 3rem 1rem;
-  }
-
-  .project-image-size {
-    width: 2.5rem;
-    height: 2.5rem;
-  }
-
-  .top-left-corner:after {
-    width: 12rem;
-    height: 1rem;
-  }
-  .bottom-right-corner:before {
-    width: 1rem;
-    height: 9rem;
-  }
-  .bottom-right-corner:after {
-    width: 12rem;
-    height: 1rem;
-  }
-
-  .project-challenges-text {
-    font-size: 0.8rem;
-  }
-
-  .project-sample-images {
-    padding: 1rem 0.5rem;
-  }
-
-  .project-technology-title {
-    font-size: 1rem;
-  }
-
-  .project-link-live {
-    font-size: 1rem;
-  }
-
-  .project-title {
-    font-size: 2rem;
-  }
+/* LINKS */
+.project-link-live {
+  display: inline-flex;
+  font-size: 0.85rem;
+  text-decoration: underline;
+  font-weight: 800;
+  color: black;
+  transition: all 0.3s ease-out;
+  word-break: break-word;
 }
 
+.project-link-live:hover {
+  color: white;
+}
+
+.project-bottom-link-container {
+  margin-top: 1.5rem;
+  padding: 0.9rem;
+  border-radius: 12px;
+  background-color: rgba(255, 255, 255, 0.25);
+}
+
+.project-bottom-link-title {
+  margin: 0 0 0.4rem 0;
+  font-weight: 900;
+  font-size: 1rem;
+}
+
+/* MODAL */
 .modal-overlay {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
+  inset: 0;
   background-color: rgba(0, 0, 0, 0.85);
   display: flex;
   justify-content: center;
@@ -457,25 +546,48 @@ export default {
   justify-content: center;
   align-items: center;
 
-  line-height: 1; 
-  margin:0;
-  padding: 0;     
+  line-height: 1;
+  margin: 0;
+  padding: 0;
   z-index: 10;
 
-  transition: transform 0.2s ease-in-out; 
+  transition: transform 0.2s ease-in-out;
 }
 
 .modal-close:hover {
   background: #eee;
-  transform: scale(1.5); 
+  transform: scale(1.5);
 }
 
-.project-sample-images {
-  cursor: pointer;
-  transition: transform 0.2s ease-in-out;
+.project-technology-subtitle {
+  margin-top: 0.8rem;
 }
 
-.project-sample-images:hover {
-  transform: scale(1.05);
+@media (max-width: 480px) {
+  .padding-container {
+    padding: 3rem 1rem;
+  }
+
+  .project-title {
+    font-size: 2rem;
+  }
+
+  .project-challenges-text,
+  .project-description-text {
+    font-size: 0.8rem;
+  }
+
+  .project-image-size {
+    width: 2.5rem;
+    height: 2rem;
+  }
+
+  .project-technology-name {
+    font-size: 0.55rem;
+  }
+
+  .project-link-live {
+    font-size: 0.75rem;
+  }
 }
 </style>
