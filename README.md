@@ -1,3 +1,17 @@
-## Kho's Portfolio and Projects
+# Kho's — Portfolio & Projects
 
-Welcome to my portfolio! This section highlights the projects I have completed during my learning journey. Each project reflects my growth and the skills I have developed along the way. Feel free to explore the code, learn more about the technologies I've used, and see how I apply what I've learned in practical ways.
+This repository contains a collection of personal full-stack and frontend development projects built using modern web technologies including Next.js, React, TypeScript, Node.js, Express, and Supabase.
+
+The projects focus on practical application development concepts such as:
+
+- CRUD operations
+- RESTful API integration
+- Authentication workflows
+- SSR and dynamic rendering
+- Responsive UI/UX design
+- State management
+- Frontend and backend integration
+
+Several projects also feature independently designed interfaces and custom UI/UX implementations.
+
+The portfolio reflects ongoing development through hands-on project building, problem solving, debugging, and real-world workflow experience using Git and modern development tooling.
