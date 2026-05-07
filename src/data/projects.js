@@ -5,10 +5,8 @@ export const projects = [
     title: "Happy Property",
     description:
       "Happy Property is a full-stack property management platform designed to support property owners and customers through a clear, modern, and user-friendly dashboard experience. The project includes authentication, separate owner and customer dashboard views, structured workflows for managing property-related data, and automated email communication using Resend.",
-
     miniDescription: "Full-stack property management platform",
     url: "https://happyproperty.co.nz",
-
     nameOfTechnologies: [
       "Typescript",
       "NextJS",
@@ -20,7 +18,6 @@ export const projects = [
       "Supabase",
       "Context API"
     ],
-
     imageOfTechnologies: [
       "/images/typescript.svg",
       "/images/nextjs.svg",
@@ -36,7 +33,6 @@ export const projects = [
     // NEW (for details page separation)
     frontendTechnologies: ["Typescript", "NextJS","Tailwind CSS" ,"CSS", "Javascript",  "Context API"],
     backendTechnologies: ["Node.js", "Express", "Supabase", "Javascript"],
-
     imageOfFrontendTechnologies: [
       "/images/typescript.svg",
       "/images/nextjs.svg",
@@ -45,7 +41,6 @@ export const projects = [
       "/images/javascript.svg",
       "/images/context-api.PNG"
     ],
-
     imageOfBackendTechnologies: [
       "/images/node_js.svg",
       "/images/express-js.svg",
@@ -128,7 +123,7 @@ export const projects = [
     linkImage: "/images/twitt-er.png",
     title: "Twitt-er",
     description:
-      "Twitt-er is a social media style application inspired by Twitter. It includes core CRUD functionality such as creating posts, reading posts, deleting posts, editing posts, and updating user profiles. The project was built to practise full application flow, user interaction, and dynamic content updates.",
+      "Twitt-er is a social media style web application inspired by classic microblogging platforms. The application supports core CRUD functionality including creating posts, deleting posts, updating user profiles, image uploads, and dynamic feed rendering. The project was built using Next.js and React to strengthen full-stack development skills, state management, responsive UI design, and API-driven workflows. The interface and overall UI/UX styling were independently designed and implemented as part of the project.",
     miniDescription: "Twitter-inspired social media app",
     url: "https://twitt-er.vercel.app/",
     nameOfTechnologies: [
@@ -147,9 +142,9 @@ export const projects = [
       "/images/react.svg",
       "/images/context-api.PNG",
     ],
-    challenges:
-      "A major challenge was learning how NextJS, Sanity, and Context API worked together. I had difficulty retrieving the latest data from Sanity and spent time reading documentation, checking forums, and asking for help through the Sanity community. The breakthrough came when I adjusted the fetch approach and used encodeURIComponent with a standard async fetch request, which allowed the latest data to load correctly.",
-    projectImages: [
+  challenges:
+    "One of the main challenges was managing data consistency between Next.js, Sanity, and Context API while ensuring the latest content rendered correctly across the application. Troubleshooting required reading documentation, researching community discussions, and testing multiple fetch strategies. The issue was resolved by refining the data fetching approach and correctly encoding query parameters using encodeURIComponent, improving reliability and dynamic content rendering.",
+      projectImages: [
       "/images/home_page_twitter.PNG",
       "/images/user_profile_page.PNG",
       "/images/other_user_profile_page.PNG",
