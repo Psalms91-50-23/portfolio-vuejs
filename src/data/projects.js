@@ -218,7 +218,7 @@ export const projects = [
     id: 6,
     linkImage: "/images/nft-home-page.png",
     title: "React-Native NFT",
-    url: "https://expo.dev/@khothach/nft-market-place?serviceType=classic&distribution=expo-go",
+    url: "https://expo.dev/accounts/khothach/projects/nft-market-place/builds/2356aabf-d6be-425d-a27e-67a691a43d74",
     description:
       "This project was built to practise React Native and understand how mobile interfaces are structured differently from web applications. The project focuses on UI layout, mobile-friendly components, filtering, read-more interactions, and displaying NFT-style content in a clean mobile experience.",
     miniDescription: "React Native NFT marketplace UI",
@@ -236,9 +236,6 @@ export const projects = [
     ],
     challenges:
       "A key challenge was adjusting from web-based React to React Native. I had to learn mobile-specific components such as FlatList, understand different styling patterns, and test the project through Expo on a physical phone after having difficulty setting up a simulator.",
-    expoURL:
-      "https://play.google.com/store/apps/details?id=host.exp.exponent&hl=en&gl=US",
-    expoMsg: "Please download the expo app below to see it live on mobile.",
   },
 
   {

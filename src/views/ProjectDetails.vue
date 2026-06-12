@@ -1,6 +1,15 @@
 <template>
   <div class="project-details">
     <div class="padding-container">
+      <div class="corner-animation top-left-corner">
+      <div class="corner-vertical"></div>
+      <div class="corner-horizontal"></div>
+    </div>
+
+    <div class="corner-animation bottom-right-corner">
+      <div class="corner-vertical"></div>
+      <div class="corner-horizontal"></div>
+    </div>
       <!-- BACK BUTTON -->
       <div class="back-button-parent">
         <div class="back-icon-container" @click="goBack">
@@ -561,6 +570,114 @@ export default {
 
 .project-technology-subtitle {
   margin-top: 0.8rem;
+}
+
+.corner-animation {
+  position: absolute;
+  width: 115px;
+  height: 115px;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.top-left-corner {
+  top: 0;
+  left: 0;
+}
+
+.bottom-right-corner {
+  bottom: 0;
+  right: 0;
+}
+
+.corner-vertical,
+.corner-horizontal {
+  position: absolute;
+  background: white;
+}
+
+/* TOP LEFT */
+.top-left-corner .corner-vertical {
+  top: -0.6rem;
+  left: 0.6rem;
+  width: 1.2rem;
+  height: 12rem;
+  animation: verticalFromLeft 0.25s ease-out forwards;
+}
+
+.top-left-corner .corner-horizontal {
+  top: -0.6rem;
+  left: -3px;
+  width: 24rem;
+  height: 1.2rem;
+  animation: horizontalHitAndBounce 1.25s ease-out forwards;
+}
+
+/* BOTTOM RIGHT */
+.bottom-right-corner .corner-vertical {
+  bottom: -0.6rem;
+  right: 0.6rem;
+  width: 1.2rem;
+  height: 12rem;
+
+}
+
+.bottom-right-corner .corner-horizontal {
+  bottom: -0.6rem;
+  right: -3px;
+  width: 24rem;
+  height: 1.2rem;
+
+}
+
+/* Vertical slams in from left and pushes into final position */
+@keyframes verticalFromLeft {
+  0% {
+    transform: translateX(-410px);
+  }
+
+  70% {
+    transform: translateX(1.2rem);
+  }
+
+  100% {
+    transform: translateX(-1rem);
+  }
+}
+
+/* Horizontal hits vertical, gets pushed back, then settles */
+@keyframes horizontalHitAndBounce {
+  0% {
+    transform: translateX(600px);
+  }
+
+  22% {
+    transform: translateX(0.9rem);
+  }
+
+  42% {
+    transform: translateX(320px);
+  }
+
+  60% {
+    transform: translateX(0.9rem);
+  }
+
+  75% {
+    transform: translateX(180px);
+  }
+
+  88% {
+    transform: translateX(0.9rem);
+  }
+
+  95% {
+    transform: translateX(70px);
+  }
+
+  100% {
+    transform: translateX(0.9rem);
+  }
 }
 
 @media (max-width: 480px) {
