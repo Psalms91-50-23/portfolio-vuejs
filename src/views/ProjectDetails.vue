@@ -615,8 +615,8 @@ export default {
 
 /* BOTTOM RIGHT */
 .bottom-right-corner .corner-vertical {
-  bottom: -0.6rem;
-  right: 0.6rem;
+  bottom: 0.6rem;
+  right: -0.6rem;
   width: 1.2rem;
   height: 12rem;
 
@@ -624,7 +624,7 @@ export default {
 
 .bottom-right-corner .corner-horizontal {
   bottom: -0.6rem;
-  right: -3px;
+  right: -0.6rem;
   width: 24rem;
   height: 1.2rem;
 
