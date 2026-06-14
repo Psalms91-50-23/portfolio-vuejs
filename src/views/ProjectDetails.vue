@@ -599,7 +599,7 @@ export default {
 /* TOP LEFT */
 .top-left-corner .corner-vertical {
   top: -0.6rem;
-  left: 0.6rem;
+  left: 0.4rem;
   width: 1.2rem;
   height: 12rem;
   animation: verticalFromLeft 0.25s ease-out forwards;
@@ -607,10 +607,10 @@ export default {
 
 .top-left-corner .corner-horizontal {
   top: -0.6rem;
-  left: -3px;
+  left: -0.25rem;
   width: 24rem;
   height: 1.2rem;
-  animation: horizontalHitAndBounce 1.25s ease-out forwards;
+  animation: horizontalHitAndBounce 1.15s ease-out forwards;
 }
 
 /* BOTTOM RIGHT */
@@ -648,35 +648,35 @@ export default {
 /* Horizontal hits vertical, gets pushed back, then settles */
 @keyframes horizontalHitAndBounce {
   0% {
-    transform: translateX(600px);
+    transform: translateX(560px);
   }
 
   22% {
-    transform: translateX(0.9rem);
+    transform: translateX(0.8rem);
   }
 
   42% {
-    transform: translateX(320px);
+    transform: translateX(420px);
   }
 
   60% {
-    transform: translateX(0.9rem);
+    transform: translateX(0.8rem);
   }
 
   75% {
-    transform: translateX(180px);
+    transform: translateX(280px);
   }
 
   88% {
-    transform: translateX(0.9rem);
+    transform: translateX(0.8rem);
   }
 
   95% {
-    transform: translateX(70px);
+    transform: translateX(180px);
   }
 
   100% {
-    transform: translateX(0.9rem);
+    transform: translateX(0.8rem);
   }
 }
 
