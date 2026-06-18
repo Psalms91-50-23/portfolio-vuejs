@@ -529,6 +529,7 @@ export default {
   position: relative;
   max-width: 90%;
   max-height: 90%;
+  overflow: auto;
 }
 
 .modal-content img {
