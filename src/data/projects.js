@@ -4,8 +4,7 @@ export const projects = [
     linkImage: "/images/happy-property-homepage.png",
     title: "Happy Property",
     description:
-      "Happy Property is a full-stack property management platform designed to support property owners and customers through a clear, modern, and user-friendly dashboard experience. The project includes authentication, separate owner and customer dashboard views, structured workflows for managing property-related data, and automated email communication using Resend.",
-    miniDescription: "Full-stack property management platform",
+      "Happy Property is a full-stack property management platform built to support property management businesses and their customers through a modern, user-friendly dashboard experience. The application features secure authentication, role-based access for owners, administrators, employees, and customers, property management workflows, automated email communication using Resend, scheduled background jobs for quote expiration and token cleanup, and an audit logging framework designed to track user actions and system-generated changes for improved security, accountability, and data integrity.",
     url: "https://happyproperty.co.nz",
     nameOfTechnologies: [
       "Typescript",
