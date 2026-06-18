@@ -31,10 +31,11 @@ export const projects = [
     ],
     integrations: ["Resend", "Google reCAPTCHA"],
     // NEW (for details page separation)
-    frontendTechnologies: ["Typescript", "NextJS","Tailwind CSS" ,"CSS", "Javascript",  "Context API"],
+    frontendTechnologies: ["Typescript", "React", "NextJS","Tailwind CSS" ,"CSS", "Javascript",  "Context API"],
     backendTechnologies: ["Node.js", "Express", "Supabase", "Javascript"],
     imageOfFrontendTechnologies: [
       "/images/typescript.svg",
+      "/images/react.svg",
       "/images/nextjs.svg",
       "/images/tailwind-css.png",
       "/images/css.svg",
