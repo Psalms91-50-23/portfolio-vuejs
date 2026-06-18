@@ -220,10 +220,15 @@
     </div>
 
     <!-- MODAL -->
-    <div v-if="isModalOpen" class="modal-overlay" @click.self="closeModal">
-      <div class="modal-content">
+   <div v-if="isModalOpen" class="modal-overlay" @click.self="closeModal">
+      <div class="modal-image-wrapper">
         <button class="modal-close" @click="closeModal">✕</button>
-        <img :src="modalImage" alt="Enlarged Project Image" />
+
+        <img
+          :src="modalImage"
+          alt="Enlarged Project Image"
+          class="modal-image"
+        />
       </div>
     </div>
   </div>
@@ -518,11 +523,22 @@ export default {
   position: fixed;
   inset: 0;
   background-color: rgba(0, 0, 0, 0.85);
-  display: flex;
-  justify-content: center;
-  align-items: center;
   z-index: 1000;
   padding: 1rem;
+  overflow: auto;
+}
+
+.modal-image-wrapper {
+  position: relative;
+  width: fit-content;
+  margin: 0 auto;
+  padding: 1rem 0 0 0;
+}
+
+.modal-image {
+  display: block;
+  max-width: 90vw;
+  height: auto;
 }
 
 .modal-content {
@@ -541,27 +557,18 @@ export default {
 
 .modal-close {
   position: absolute;
-  top: -10px;
-  right: -10px;
+  top: 0px;
+  right: -12px;
+  z-index: 9999;
+
   background: white;
   border: none;
   border-radius: 50%;
-  width: 30px;
-  height: 30px;
-  font-size: 20px;
+  width: 34px;
+  height: 34px;
+  font-size: 22px;
   font-weight: bold;
   cursor: pointer;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  line-height: 1;
-  margin: 0;
-  padding: 0;
-  z-index: 10;
-
-  transition: transform 0.2s ease-in-out;
 }
 
 .modal-close:hover {
