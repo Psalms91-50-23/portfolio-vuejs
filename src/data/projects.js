@@ -9,6 +9,7 @@ export const projects = [
     url: "https://happyproperty.co.nz",
     nameOfTechnologies: [
       "Typescript",
+      "React",
       "NextJS",
       "CSS",
       "Tailwind CSS",
@@ -20,6 +21,7 @@ export const projects = [
     ],
     imageOfTechnologies: [
       "/images/typescript.svg",
+      "/images/react.svg",
       "/images/nextjs.svg",
       "/images/css.svg",
       "/images/tailwind-css.png",

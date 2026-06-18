@@ -49,6 +49,7 @@ export default {
       rootMargin: '0px',
       threshold: 0.1 
     }
+    
   const outOfViewObserver = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
