@@ -61,7 +61,11 @@ export const projects = [
       "/images/happy-property-auth-page.png",
       "/images/happy-property-service-page.png",
       "/images/happy-property-owner-dashboard.png",
-      "/images/happy-property-customer-dashboard.png"
+      "/images/happy-property-customer-dashboard.png",
+      "/images/happy-property-jobs-in-dashboard.png",
+      "/images/happy-property-jobs-details.png",
+      "/images/happy-property-jobs-in-dashboard-1.png",
+      "/images/happy-property-client-quote.png",
     ],
   },
   {
