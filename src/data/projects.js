@@ -54,7 +54,7 @@ export const projects = [
       "/images/recaptcha.svg"
     ],
     challenges:
-      "A key challenge was designing the project as a complete full-stack system rather than only focusing on frontend UI. This included structuring backend routes, managing authentication, and ensuring the correct data was delivered to different user roles such as property owners and customers. Another challenge was maintaining a clean and responsive UI while integrating backend services reliably.",
+      "A key challenge was building and coordinating multiple parts of the application across the frontend, backend, and database layers. This included implementing secure authentication, role-based access control for owners, administrators, employees, and customers, integrating automated email workflows with Resend, and developing scheduled background jobs for quote expiration and token cleanup. Maintaining data consistency, security, and a clean user experience while supporting these business processes was one of the most significant challenges of the project.",
 
     projectImages: [
       "/images/happy-property-homepage.png",
